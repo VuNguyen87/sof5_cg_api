@@ -1,0 +1,115 @@
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.fis.customs.api.ecustomsgw</groupId>
+	<artifactId>ecustomsgw-webapi</artifactId>
+	<version>1.0.1</version>
+	<packaging>war</packaging>
+	<name>ecustomsgw-webapi</name>
+	<description>Project ecustomsgw-webapi is restful api</description>
+	<url>http://www.fpt-is.com</url>
+	<inceptionYear>2018</inceptionYear>
+	<properties>
+		<jdk.version>1.8</jdk.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>vn.fis.sof5</groupId>
+			<artifactId>sof5-core</artifactId>
+			<version>1.0.1</version>
+		</dependency>
+		<dependency>
+			<groupId>vn.fis.sof5</groupId>
+			<artifactId>sof5-webapi-spring</artifactId>
+			<version>2.0.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fis.customs.core.ecustomsgw</groupId>
+			<artifactId>ecustomsgw-core</artifactId>
+			<version>1.0.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.mockito/mockito-core -->
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<version>2.18.3</version>
+		</dependency>
+	</dependencies>
+	<build>
+		<finalName>ecustomsgw-webapi</finalName>
+		<!-- <sourceDirectory>src</sourceDirectory> -->
+		<plugins>
+			<!-- Eclipse project -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-eclipse-plugin</artifactId>
+				<version>2.9</version>
+				<configuration>
+					<!-- Always download and attach dependencies source code -->
+					<downloadSources>true</downloadSources>
+					<downloadJavadocs>false</downloadJavadocs>
+					<!-- mvn eclipse:eclipse -Dwtpversion=2.0 -->
+					<wtpversion>2.0</wtpversion>
+					<wtpContextName>ecustomsgw-webapi</wtpContextName>
+				</configuration>
+			</plugin>
+
+			<!-- Set JDK Compiler Level -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.7.0</version>
+				<configuration>
+					<source>${jdk.version}</source>
+					<target>${jdk.version}</target>
+					<encoding>${project.build.sourceEncoding}</encoding>
+				</configuration>
+			</plugin>
+			<!-- Maven Assembly Plugin -->
+			<!-- <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-assembly-plugin</artifactId> 
+				<version>2.4.1</version> <configuration> <descriptorRefs> <descriptorRef>jar-with-dependencies</descriptorRef> 
+				</descriptorRefs> <finalName>ecustomsgw-webapi-v${project.version}-full</finalName> 
+				<appendAssemblyId>false</appendAssemblyId> </configuration> <executions> 
+				<execution> <id>make-assembly</id> <phase>package</phase> <goals> <goal>single</goal> 
+				</goals> </execution> </executions> </plugin> -->
+		</plugins>
+	</build>
+
+	<repositories>
+		<repository>
+			<id>maven-group</id>
+			<url>http://10.15.68.106:8081/repository/maven-group/</url>
+		</repository>
+	</repositories>
+
+	<distributionManagement>
+		<snapshotRepository>
+			<id>nexus-snapshots</id>
+			<url>http://10.15.68.106:8081/repository/maven-snapshots/</url>
+		</snapshotRepository>
+		<repository>
+			<id>nexus-releases</id>
+			<url>http://10.15.68.106:8081/repository/maven-releases/</url>
+		</repository>
+	</distributionManagement>
+
+	<organization>
+		<name>FPT Information System</name>
+		<url>http://www.fpt-is.com</url>
+	</organization>
+	<developers>
+		<developer>
+			<id>ThangNM11</id>
+			<name>Nguyen Manh Thang</name>
+			<email>ThangNM11@fpt.com.vn</email>
+		</developer>
+	</developers>
+</project>
