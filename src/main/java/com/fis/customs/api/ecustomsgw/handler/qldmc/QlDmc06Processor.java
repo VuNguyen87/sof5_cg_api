@@ -34,7 +34,7 @@ public class QlDmc06Processor extends WebApiBaseProcessorEcustomsGwImpl<Ecustoms
 		objBaseEntity = jacksonEx.objectNode2Object(requestData.getData(), ParamsEntity.class);
 		daoBase.insertItem(cacheSession.get(EHibernateCfgEcustomsGw.VNACCSVA), objBaseEntity);
 		daoBase.insertItemHIS(cacheSession.get(EHibernateCfgEcustomsGw.VNACCSVA), objBaseEntity, "INSERT");
-		return true;
+		return Boolean.TRUE;
 	}
 
 	@Override
@@ -42,7 +42,7 @@ public class QlDmc06Processor extends WebApiBaseProcessorEcustomsGwImpl<Ecustoms
 		objBaseEntity = jacksonEx.objectNode2Object(requestData.getData(), ParamsEntity.class);
 		daoBase.updateItem(cacheSession.get(EHibernateCfgEcustomsGw.VNACCSVA), objBaseEntity);
 		daoBase.insertItemHIS(cacheSession.get(EHibernateCfgEcustomsGw.VNACCSVA), objBaseEntity, "UPDATE");
-		return true;
+		return Boolean.TRUE;
 	}
 
 	@Override
@@ -50,7 +50,7 @@ public class QlDmc06Processor extends WebApiBaseProcessorEcustomsGwImpl<Ecustoms
 		objBaseEntity = jacksonEx.objectNode2Object(requestData.getData(), ParamsEntity.class);
 		daoBase.delete(cacheSession.get(EHibernateCfgEcustomsGw.VNACCSVA), objBaseEntity);
 		daoBase.insertItemHIS(cacheSession.get(EHibernateCfgEcustomsGw.VNACCSVA), objBaseEntity, "DELETE");
-		return true;
+		return Boolean.TRUE;
 	}
 
 	@Override
